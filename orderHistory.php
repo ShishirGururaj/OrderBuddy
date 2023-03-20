@@ -1,19 +1,26 @@
 <?php
+
 	session_start();
+
 	$name = $_SESSION['user_name'];
 	$email = $_SESSION['user_email'];
 	$haverest=0;
+
 	include 'includes/dbh.inc.php';
+
 	$sqlRest = "SELECT * from restaurants";
 	$result = mysqli_query($conn,$sqlRest);
 	$checkhaveRes = "Select * from users where user_name = '$name'";
 	$have = mysqli_query($conn,$checkhaveRes);
 	$row = mysqli_fetch_array($have);
+
 	if($row['user_haverest']==1){
 		$haverest=1;
 	}
 ?>
+
 <html>
+	
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -23,6 +30,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/user.css">
 </head>
+	
 <script type="text/javascript">
 	function sortByRating(){
 
@@ -32,6 +40,7 @@
 		window.location.href = "order.php?name="+name;
 	}
 </script>
+	
 <body>
 	<header>
 		<h2>Fooder</h2>
