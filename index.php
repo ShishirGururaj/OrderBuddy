@@ -3,8 +3,10 @@
 	$sqlRest = "SELECT * from restaurants";
 	$result = mysqli_query($conn,$sqlRest);
 ?>
+
 <!DOCTYPE html>
 <html>
+	
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -14,6 +16,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
+	
 <script type="text/javascript">
 	function sortByRating(){
 
@@ -23,6 +26,7 @@
 		return false;
 	}
 </script>
+	
 <body>
 	<header>
 		<h2>Fooder</h2>
@@ -152,4 +156,5 @@
 			</div>
 		</form>
 	</div>
+	
 </body>
