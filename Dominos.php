@@ -49,8 +49,8 @@
 			<span class="caret"></span></button>
 			<ul class="dropdown-menu">
 				<li><a href="orderHistory.php">Order History</a></li>
-			    <li><a href="AddRestaurant.php">Add Restaurant</a></li>
-			    <li><a href="<?php if($haverest==1){ echo "ManageRestaurant.php";}else{ echo "#";}?>">Manage Restaurant</a></li>
+			    <li><a href="AddRestaurant.php">Add a Restaurant</a></li>
+			    <li><a href="<?php if($haverest==1){ echo "ManageRestaurant.php";}else{ echo "#";}?>">Manage Restaurants</a></li>
 			    <li><a href="logsignup/logout.php">Logout</a></li>
 			</ul>
 		</div>
