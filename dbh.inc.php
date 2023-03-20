@@ -5,7 +5,4 @@ $dbUserName="root";
 $dbPassword="";
 $dbName="food";
 
-$conn  = mysqli_connect($dbServerName,$dbUserName,$dbPassword,$dbName);
-    
-    
-
+$conn  = mysqli_connect($dbServerName,$dbUserName,$dbPassword,$dbName);  
