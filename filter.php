@@ -1,13 +1,17 @@
 <?php
 	session_start();
+
 	@$name = $_SESSION['user_name'];
 	@$email = $_SESSION['user_email'];
+
 	include 'includes/dbh.inc.php';
+
 	$criteria = $_GET['criteria'];
 	$sql = "SELECT * from restaurants";
 	$result = mysqli_query($conn,$sql);
 	$id = '';
 	$ans = array();
+
 	if(mysqli_num_rows($result)>0){
 		while($row = mysqli_fetch_array($result)){
 			$cuisineAvail=$row['rest_cuisine'];
@@ -19,6 +23,7 @@
 			}
 		}
 	}
+
 	if(strlen($id)>0){
 		$id = substr($id, 0,-4);
 		$sqlRest="SELECT * from restaurants where ".$id;
@@ -63,13 +68,14 @@
 			<ul class="dropdown-menu">
 				<li><a href="userLoggedIn.php">Home</a></li>
 				<li><a href="orderHistory.php">Order History</a></li>
-			    <li><a href="AddRestaurant.php">Add Restaurant</a></li>
-			    <li><a href="<?php if($haverest==1){ echo "ManageRestaurant.php";}else{ echo "#";}?>">Manage Restaurant</a></li>
+			    <li><a href="AddRestaurant.php">Add a Restaurant</a></li>
+			    <li><a href="<?php if($haverest==1){ echo "ManageRestaurant.php";}else{ echo "#";}?>">Manage Restaurants</a></li>
 			    <li><a href="logsignup/logout.php">Logout</a></li>
 			</ul>
 		</div>
 		<?php }?>
 	</header>
+	
 	<div class="container">
 		<h2 style="margin-top: 1%;">Order Food Online from your favourite outlet</h2>
 		<?php
@@ -138,6 +144,7 @@
 				<li><button onclick="cuisinefilter('Cafe')" style="border: none; background-color: #fff; cursor: pointer; color:blue;">Cafe</button></li>
 			</ul>
 		</div>
+		
 		<form method="post" action="logsignup/signup.php">
 			<div class="modal fade" id="signup" role="dialog">
 			    <div class="modal-dialog">
@@ -167,6 +174,7 @@
 			    </div>
 			</div>
 		</form>
+		
 		<form method="post" action="logsignup/login.php">
 			<div class="modal fade" id="login" role="dialog">
 			    <div class="modal-dialog">
@@ -192,5 +200,7 @@
 			    </div>
 			</div>
 		</form>
+		
 	</div>
+	
 </body>
