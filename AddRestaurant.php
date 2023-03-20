@@ -32,8 +32,8 @@
 			<ul class="dropdown-menu">
 				<li><a href="userLoggedIn.php">Home</a></li>
 				<li><a href="orderHistory.php">Order History</a></li>
-			    <li><a href="AddRestaurant.php">Add Restaurant</a></li>
-			    <li><a href="ManageRestaurant.php">Manage Restaurant</a></li>
+			    <li><a href="AddRestaurant.php">Add a Restaurant</a></li>
+			    <li><a href="ManageRestaurant.php">Manage Restaurants</a></li>
 			    <li><a href="logsignup/logout.php">Logout</a></li>
 			</ul>
 		</div>
