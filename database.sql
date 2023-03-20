@@ -13,14 +13,6 @@ CREATE TABLE restaurants(
 	rest_cuisine varchar(100)
 );
 
-CREATE TABLE users(
-	user_id int(100) Auto_increment primary key,
-	user_name varchar(50),
-	user_email varchar(50),
-	user_password varchar(100),
-	user_haverest int(100) DEFAULT 0
-);
-
 CREATE table orders(
 	user_name varchar(50),
 	order_item varchar(100),
@@ -28,3 +20,10 @@ CREATE table orders(
 	rest_name varchar(100)
 );
 
+CREATE TABLE users(
+	user_id int(100) Auto_increment primary key,
+	user_name varchar(50),
+	user_email varchar(50),
+	user_password varchar(100),
+	user_haverest int(100) DEFAULT 0
+);
