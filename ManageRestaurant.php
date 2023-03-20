@@ -1,6 +1,8 @@
 <?php
 	session_start();
+
 	include 'includes/dbh.inc.php';
+
 	$name = $_SESSION['user_name'];
 	$sql = "SELECT * from restaurants where rest_ownername='$name'";
 	$res = mysqli_query($conn,$sql);
@@ -10,9 +12,11 @@
 	$checkhaveRes = "Select * from users where user_name = '$name'";
 	$have = mysqli_query($conn,$checkhaveRes);
 	$row1 = mysqli_fetch_array($have);
+
 	if($row1['user_haverest']==1){
 		$haverest=1;
 	}
+
 	if(isset($_POST['addcuisine'])){
 		$cuisinename = $_POST['dish'];
 		$type = $_POST['type'];
@@ -23,7 +27,9 @@
 		unset($_POST['addcuisine']);
 	}
 ?>
+
 <html>
+	
 <head>
 	<title>Manage-<?php echo $rest_name;?></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -33,7 +39,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/manage.css">
 </head>
+	
 <body>
+	
 	<header>
 		<h2>Fooder</h2>
 		<div class="dropdown">
@@ -48,6 +56,7 @@
 			</ul>
 		</div>
 	</header>
+	
 	<div class="container">
 		<div class="card">
 			<div class="row">
@@ -108,5 +117,7 @@
 			?>
 		</div>
 	</div>
+	
 </body>
+	
 </html>
