@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_POST['login'])){
     include '../includes/dbh.inc.php';
     $email = mysqli_real_escape_string($conn,$_POST['user_email']);
@@ -7,6 +8,7 @@ if(isset($_POST['login'])){
     $sql = "SELECT * FROM users WHERE user_email='$email'";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
+    
     if($resultcheck < 1){
         header("Location: ../index.php?login=nosuchemail");
         exit();
@@ -34,5 +36,3 @@ if(isset($_POST['login'])){
     header("Location: ../index.php?login=error");
     exit();
 }
-
-
